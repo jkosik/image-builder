@@ -35,7 +35,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           build_file: ./gcp-deployer/Dockerfile
-          registry: jkosik/gcp-deployer
           tag: aa
 
       - name: Login to DockerHub
