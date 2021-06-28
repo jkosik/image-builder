@@ -8,7 +8,7 @@ env:
 on:
   push:
     branches: 
-      - 'main2'
+      - 'main'
     paths:
       - terraform/Dockerfile
       
