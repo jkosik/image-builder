@@ -1,16 +1,16 @@
 name: gcp-deployer
 
 env:
-  DOCKERHUB_NAMESPACE: jkosik
-  DOCKERHUB_REPO: gcp-deployer
-  TAG: 346.0.0
+  DOCKERHUB_NAMESPACE: jkosik # matches DockerHub account
+  DOCKERHUB_REPO: terraform # matches DockerHub Repository and Folder name
+  TAG: 1.0.1
 
 on:
   push:
     branches: 
-      - 'main'
+      - 'main2'
     paths:
-      - gcp-deployer/Dockerfile
+      - terraform/Dockerfile
       
   workflow_dispatch:
 
@@ -29,5 +29,5 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           build_file: ${{ env.DOCKERHUB_REPO }}/Dockerfile
-          extra_args: CLOUD_SDK_VERSION=${{ env.TAG }}
+          extra_args: TF_VERSION=${{ env.TAG }}
           tag: ${{ env.TAG }}

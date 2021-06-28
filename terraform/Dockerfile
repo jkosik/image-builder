@@ -1,6 +1,6 @@
 FROM alpine
 
-ENV TF_VERSION=1.0.1
+ARG TF_VERSION=1.0.0
 
 # Tools
 RUN apk add --update --no-cache curl \
