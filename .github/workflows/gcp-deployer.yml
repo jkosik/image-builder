@@ -29,5 +29,4 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           build_file: ${{ env.DOCKERHUB_REPO }}/Dockerfile
-          extra_args: CLOUD_SDK_VERSION=${{ env.TAG }}
           tag: ${{ env.TAG }}

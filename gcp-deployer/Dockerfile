@@ -1,8 +1,8 @@
-ARG CLOUD_SDK_VERSION=latest
+ENV CLOUD_SDK_VERSION=346.0.0
 
 FROM gcr.io/google.com/cloudsdktool/cloud-sdk:${CLOUD_SDK_VERSION}-alpine
 
-ARG KUBECTL_VERSION=v1.20.5
+ENV KUBECTL_VERSION=v1.20.5
 
 RUN apk --update --no-cache add  \
   bash \
