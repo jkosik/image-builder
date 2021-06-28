@@ -1,8 +1,8 @@
 name: gcp-deployer
 
 env:
-  DOCKERHUB_NAMESPACE: jkosik # matches DockerHub account
-  DOCKERHUB_REPO: terraform # matches DockerHub Repository and Folder name
+  DOCKERHUB_NAMESPACE: jkosik 
+  DOCKERHUB_REPO: terraform
   TAG: 1.0.1
 
 on:

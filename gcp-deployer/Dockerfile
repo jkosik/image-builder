@@ -1,4 +1,4 @@
-ENV CLOUD_SDK_VERSION=346.0.0
+ARG CLOUD_SDK_VERSION=346.0.0
 
 FROM gcr.io/google.com/cloudsdktool/cloud-sdk:${CLOUD_SDK_VERSION}-alpine
 
