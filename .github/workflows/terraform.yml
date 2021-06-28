@@ -1,4 +1,4 @@
-name: gcp-deployer
+name: terraform
 
 env:
   DOCKERHUB_NAMESPACE: jkosik 
@@ -11,6 +11,7 @@ on:
       - 'main'
     paths:
       - terraform/Dockerfile
+      - .github/workflows/**
       
   workflow_dispatch:
 
