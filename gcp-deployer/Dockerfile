@@ -1,4 +1,4 @@
-FROM gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
+FROM gcr.io/google.com/cloudsdktool/cloud-sdk:346.0.0-alpine
 
 ENV KUBECTL_VERSION v1.20.5
 
