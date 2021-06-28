@@ -3,7 +3,7 @@ name: gcp-deployer
 env:
   DOCKERHUB_NAMESPACE: jkosik
   DOCKERHUB_REPO: gcp-deployer
-  TAG: 1.20.5
+  TAG: 346
 
 on:
   push:
