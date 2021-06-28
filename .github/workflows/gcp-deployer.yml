@@ -10,13 +10,12 @@ on:
     branches: 
       - 'main'
     paths:
-      - '${{ env.DOCKERHUB_REPO }}/Dockerfile'
+      - "${{ env.DOCKERHUB_REPO }}/Dockerfile"
 
   workflow_dispatch:
 
 jobs:
   build_and_push:
-    env:
     name: Build and push Docker image to DockerHub
     runs-on: ubuntu-latest
     steps:
