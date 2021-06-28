@@ -10,8 +10,9 @@ on:
     branches: 
       - 'main'
     paths:
-      - "${{ env.DOCKERHUB_REPO }}/Dockerfile"
-
+#      - "${{ env.DOCKERHUB_REPO }}/Dockerfile"
+      - gcp-deployer/Dockerfile
+      
   workflow_dispatch:
 
 jobs:
