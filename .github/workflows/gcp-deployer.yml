@@ -3,14 +3,13 @@ name: gcp-deployer
 env:
   DOCKERHUB_NAMESPACE: jkosik
   DOCKERHUB_REPO: gcp-deployer
-  TAG: 346
+  DOCKERHUB_TAG: 346
 
 on:
   push:
     branches: 
       - 'main'
     paths:
-#      - "${{ env.DOCKERHUB_REPO }}/Dockerfile"
       - gcp-deployer/Dockerfile
       
   workflow_dispatch:
