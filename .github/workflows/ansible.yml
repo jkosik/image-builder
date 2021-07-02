@@ -11,7 +11,7 @@ on:
       - 'main'
     paths:
       - ansible/Dockerfile
-      - .github/workflows/**
+      - .github/workflows/ansible.yml
       
   workflow_dispatch:
 

@@ -11,7 +11,7 @@ on:
       - 'main'
     paths:
       - gcp-deployer/Dockerfile
-      - .github/workflows/**
+      - .github/workflows/gcp-deployer.yml
       
   workflow_dispatch:
 
