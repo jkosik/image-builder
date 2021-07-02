@@ -1,4 +1,4 @@
-FROM alpine
+FROM python:3.9-slim
 
 ENV TF_VERSION=1.0.1
 
