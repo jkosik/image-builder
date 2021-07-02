@@ -1,0 +1,33 @@
+name: terraform
+
+env:
+  DOCKERHUB_NAMESPACE: jkosik 
+  DOCKERHUB_REPO: ansible
+  TAG: 4.2.0
+
+on:
+  push:
+    branches: 
+      - 'main'
+    paths:
+      - ansible/Dockerfile
+      - .github/workflows/**
+      
+  workflow_dispatch:
+
+jobs:
+  build_and_push:
+    name: Build and push Docker image to DockerHub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@master
+
+      - name: Kaniko build
+        uses: aevea/action-kaniko@master
+        with:
+          image: ${{ env.DOCKERHUB_NAMESPACE }}/${{ env.DOCKERHUB_REPO }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          build_file: ${{ env.DOCKERHUB_REPO }}/Dockerfile
+          tag: ${{ env.TAG }}
