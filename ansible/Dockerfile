@@ -11,7 +11,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     curl \
     git \
     openssh-client \
-    python-pip3 \
+    python3-pip \
 && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --no-cache-dir \
