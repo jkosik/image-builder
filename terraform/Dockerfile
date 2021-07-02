@@ -3,6 +3,7 @@ FROM alpine
 ENV TF_VERSION=1.0.1
 
 RUN apk add --update --no-cache curl \
+        bash \
         git \
         jq \
         openssh-client \
