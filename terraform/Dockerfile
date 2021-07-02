@@ -15,6 +15,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     git \
     jq \
     openssh-client \
+    unzip \
 && rm -rf /var/lib/apt/lists/*
 
 RUN curl --output terraform_${TF_VERSION}_linux_amd64.zip https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip \
