@@ -1,4 +1,4 @@
-name: terraform
+name: ansible
 
 env:
   DOCKERHUB_NAMESPACE: jkosik 

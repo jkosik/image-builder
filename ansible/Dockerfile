@@ -10,7 +10,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     bash \
     curl \
     git \
-    openssh-client
+    openssh-client \
 && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --no-cache-dir \
