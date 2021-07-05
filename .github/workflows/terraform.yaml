@@ -1,18 +1,18 @@
-name: gcp-deployer
+name: terraform
 
 env:
   DOCKERHUB_NAMESPACE: jkosik
-  DOCKERHUB_REPO: gcp-deployer
-  TAG: 346.0.0
+  DOCKERHUB_REPO: terraform
+  TAG: 1.0.1
 
 on:
   push:
-    branches: 
+    branches:
       - 'main'
     paths:
-      - gcp-deployer/Dockerfile
-      - .github/workflows/gcp-deployer.yml
-      
+      - terraform/Dockerfile
+      - .github/workflows/terraform.yaml
+
   workflow_dispatch:
 
 jobs:
