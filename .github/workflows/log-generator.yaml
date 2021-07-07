@@ -3,8 +3,7 @@ name: log-generator
 env:
   DOCKERHUB_NAMESPACE: jkosik
   DOCKERHUB_REPO: log-generator
-  TAG: 0.0.1
-
+  TAG: latest
 on:
   push:
     branches:
