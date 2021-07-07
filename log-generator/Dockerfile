@@ -2,5 +2,5 @@ FROM alpine
 RUN apk add --no-cache \
   bash \
   logger
-COPY . /app
+COPY entrypoint.sh /app
 ENTRYPOINT ["/app/entrypoint.sh"]
