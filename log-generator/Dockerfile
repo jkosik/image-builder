@@ -3,5 +3,5 @@ RUN apk add --no-cache \
   bash \
   logger
 RUN mkdir /app
-COPY ./entrypoint.sh /app/
+COPY ./entrypoint.sh /app/entrypoint.sh
 ENTRYPOINT ["/app/entrypoint.sh"]
