@@ -9,7 +9,7 @@ on:
     branches:
       - 'main'
     paths:
-      - log-generator/Dockerfile
+      - log-generator/*
       - .github/workflows/log-generator.yaml
 
   workflow_dispatch:
