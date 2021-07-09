@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM python3.9:slim
 
 ENV ANSIBLE_VERSION=4.2.0
 
