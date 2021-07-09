@@ -17,5 +17,6 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
 RUN pip3 install --no-cache-dir \
                      ansible==$ANSIBLE_VERSION \
                      jmespath \
-                     ansible-lint 
+                     ansible-lint
 
+RUN ansible-galaxy collection install community.kubernetes
