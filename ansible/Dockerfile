@@ -1,4 +1,4 @@
-FROM python3.9:slim
+FROM python:3.9-slim
 
 ENV ANSIBLE_VERSION=4.2.0
 ENV ANSIBLE_GATHERING=smart
