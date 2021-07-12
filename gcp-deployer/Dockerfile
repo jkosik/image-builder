@@ -1,6 +1,6 @@
 ARG CLOUD_SDK_VERSION=346.0.0
 
-FROM gcr.io/google.com/cloudsdktool/cloud-sdk:${CLOUD_SDK_VERSION}-alpine
+FROM gcr.io/google.com/cloudsdktool/cloud-sdk:${CLOUD_SDK_VERSION}-slim
 
 ENV KUBECTL_VERSION=v1.20.5
 
@@ -15,4 +15,4 @@ RUN curl -Lo /usr/local/bin/kubectl \
 	https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
 	&& chmod +x /usr/local/bin/kubectl
 
-RUN rm -rf /var/cache/apk/*  
+RUN rm -rf /var/cache/apk/*
