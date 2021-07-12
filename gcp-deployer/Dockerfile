@@ -6,7 +6,6 @@ ENV KUBECTL_VERSION=v1.20.5
 
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     bash \
-    bind-tools \
     curl \
     jq \
     openssh-client \
