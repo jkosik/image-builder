@@ -9,7 +9,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     bind-tools \
     curl \
     jq \
-    openssh-client
+    openssh-client \
 && rm -rf /var/lib/apt/lists/*
 
 RUN curl -Lo /usr/local/bin/kubectl \
