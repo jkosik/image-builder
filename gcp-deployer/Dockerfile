@@ -9,6 +9,11 @@ ENV ANSIBLE_GATHERING=smart
 ENV ANSIBLE_HOST_KEY_CHECKING=False
 ENV ANSIBLE_SSH_PIPELINING=True
 
+
+# sudo apt install python3.8
+# add-apt-repository ppa:deadsnakes/ppa
+# apt install python3.8
+
 # basic binaries
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     bash \
@@ -16,7 +21,9 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     git \
     jq \
     openssh-client \
+    python3.8 \
     python3-pip \
+    software-properties-common \
     unzip \
 && rm -rf /var/lib/apt/lists/*
 
