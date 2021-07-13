@@ -9,11 +9,6 @@ ENV ANSIBLE_GATHERING=smart
 ENV ANSIBLE_HOST_KEY_CHECKING=False
 ENV ANSIBLE_SSH_PIPELINING=True
 
-
-# sudo apt install python3.8
-# add-apt-repository ppa:deadsnakes/ppa
-# apt install python3.8
-
 # basic binaries
 RUN apt update && apt-get upgrade -y && apt install -y \
     bash \
@@ -24,10 +19,6 @@ RUN apt update && apt-get upgrade -y && apt install -y \
     python3-pip \
     software-properties-common \
     unzip \
-&& rm -rf /var/lib/apt/lists/*
-
-RUN add-apt-repository -y ppa:deadsnakes/ppa && apt update \
-&& apt install -y python3.8 \
 && rm -rf /var/lib/apt/lists/*
 
 # kubectl
