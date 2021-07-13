@@ -15,20 +15,19 @@ ENV ANSIBLE_SSH_PIPELINING=True
 # apt install python3.8
 
 # basic binaries
-RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+RUN apt update && apt-get upgrade -y && apt install -y \
     bash \
     curl \
     git \
     jq \
     openssh-client \
-    python3.8 \
     python3-pip \
     software-properties-common \
     unzip \
 && rm -rf /var/lib/apt/lists/*
 
-RUN add-apt-repository -y ppa:deadsnakes/ppa && apt-get update \
-&& apt install python3.8 \
+RUN add-apt-repository -y ppa:deadsnakes/ppa && apt update \
+&& apt install -y python3.8 \
 && rm -rf /var/lib/apt/lists/*
 
 # kubectl
