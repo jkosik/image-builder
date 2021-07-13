@@ -27,6 +27,10 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     unzip \
 && rm -rf /var/lib/apt/lists/*
 
+RUN add-apt-repository -y ppa:deadsnakes/ppa && apt-get update \
+&& apt install python3.8 \
+&& rm -rf /var/lib/apt/lists/*
+
 # kubectl
 RUN curl -Lo /usr/local/bin/kubectl \
 	https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
