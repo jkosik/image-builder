@@ -11,7 +11,7 @@ RUN apt update && apt-get upgrade -y && apt install -y \
 WORKDIR /app
 COPY k8s-state-checker.sh .
 
-# kubectl
+# install kubectl
 RUN curl -Lo /usr/local/bin/kubectl \
 	https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl \
 	&& chmod +x /usr/local/bin/kubectl
