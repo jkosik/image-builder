@@ -1,4 +1,4 @@
-FROM bullseye-slim
+FROM buster-slim
 
 ENV KUBECTL_VERSION=v1.20.5
 

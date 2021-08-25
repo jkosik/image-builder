@@ -1,9 +1,3 @@
-# K8S State Checker
-Image runs set of `kubectl` and `helm` commands against Kubernetes API and stores outcome to a ConfigMap.
-
-## Run
-Run by deploying the following manifest
-```
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -24,4 +18,3 @@ spec:
       containers:
       - name: k8s-state-checker
         image: jkosik/k8s-state-checker
-```
