@@ -1,4 +1,4 @@
-FROM buster-slim
+FROM debian:bullseye-slim
 
 ENV KUBECTL_VERSION=v1.20.5
 
