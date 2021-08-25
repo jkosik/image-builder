@@ -18,4 +18,42 @@ spec:
       containers:
       - name: k8s-state-checker
         image: jkosik/k8s-state-checker:0.0.1
+      serviceAccountName: k8s-state-checker
 
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: k8s-state-checker
+  labels:
+    infra: k8s-state-checker
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: k8s-state-checker
+  labels:
+    app: k8s-state-checker
+rules:
+- apiGroups: ["extensions", "apps"]
+  resources: ["deployments", "replicasets"]
+  verbs: ["get", "list", "create", "patch", "update", "delete"]
+- apiGroups: [""]
+  resources: ["services", "pods", "secrets", "configmaps"]
+  verbs: ["get", "list", "watch", "create", "update", "delete", "patch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: k8s-state-checker
+  labels:
+    app: k8s-state-checker
+roleRef:
+  kind: Role
+  name: k8s-state-checker
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: ServiceAccount
+  name: k8s-state-checker
