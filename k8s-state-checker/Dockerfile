@@ -23,5 +23,5 @@ RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master
     && chmod 700 get_helm.sh \
     && ./get_helm.sh
 
-RUN ["chmod", "+x", "./entrypoint.sh"]
-ENTRYPOINT ["./entrypoint.sh"]
+RUN ["chmod", "+x", "./k8s-state-checker.sh"]
+ENTRYPOINT ["./k8s-state-checker.sh"]

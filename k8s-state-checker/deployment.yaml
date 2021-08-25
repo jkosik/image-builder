@@ -17,4 +17,5 @@ spec:
     spec:
       containers:
       - name: k8s-state-checker
-        image: jkosik/k8s-state-checker
+        image: jkosik/k8s-state-checker:0.0.1
+
