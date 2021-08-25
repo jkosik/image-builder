@@ -3,7 +3,7 @@
 kubectl get po -l app!=k8s-state-checker --no-headers > pods
 helm list > helm-charts
 
-kubectl create cm expected-versions --from-file=pods --from-file=charts
+kubectl create cm expected-versions --from-file=pods --from-file=helm-charts
 sleep 5
 
 kubectl describe cm expected-versions
