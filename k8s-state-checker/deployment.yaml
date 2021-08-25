@@ -18,7 +18,7 @@ rules:
   resources: ["deployments", "replicasets"]
   verbs: ["get", "list", "create", "patch", "update", "delete"]
 - apiGroups: [""]
-  resources: ["services", "pods", "secrets", "configmaps"]
+  resources: ["services", "pods", "secrets", "configmaps", "events"]
   verbs: ["get", "list", "watch", "create", "update", "delete", "patch"]
 
 ---
