@@ -5,6 +5,7 @@ ENV KUBECTL_VERSION=v1.20.5
 # basic binaries
 RUN apt update && apt-get upgrade -y && apt install -y \
     bash \
+    curl \
     jq \
     && rm -rf /var/lib/apt/lists/*
 
