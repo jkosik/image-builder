@@ -3,7 +3,7 @@ name: k8s-state-checker
 env:
   DOCKERHUB_NAMESPACE: jkosik
   DOCKERHUB_REPO: k8s-state-checker
-  TAG: 0.0.1
+  TAG: latest
 
 on:
   push:

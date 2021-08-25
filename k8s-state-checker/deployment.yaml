@@ -1,26 +1,4 @@
 ---
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: k8s-state-checker
-  labels:
-    app: k8s-state-checker
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: k8s-state-checker
-  template:
-    metadata:
-      labels:
-        app: k8s-state-checker
-    spec:
-      containers:
-      - name: k8s-state-checker
-        image: jkosik/k8s-state-checker:0.0.1
-      serviceAccountName: k8s-state-checker
-
----
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -57,3 +35,26 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: k8s-state-checker
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-state-checker
+  labels:
+    app: k8s-state-checker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-state-checker
+  template:
+    metadata:
+      labels:
+        app: k8s-state-checker
+    spec:
+      containers:
+      - name: k8s-state-checker
+        image: jkosik/k8s-state-checker:latest
+      serviceAccountName: k8s-state-checker
+
