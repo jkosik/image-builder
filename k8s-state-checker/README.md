@@ -15,6 +15,5 @@ kubectl logs PODNAME
 ## Deployment
 Include `deployment.yaml` to the Helm Charts deployed on the target cluster and hook control script against the newly created ConfigMap.
 
-
 ## Notes
 ConfigMap is not deleted when running `kubectl delete -f deployment.yaml` so repetitive run fails.
