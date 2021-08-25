@@ -1,27 +1,20 @@
 # K8S State Checker
-Image runs set of `kubectl` and `helm` commands against Kubernetes API and stores outcome to a ConfigMap.
+Image runs set of `kubectl` and `helm` commands against Kubernetes API and stores outcome to a ConfigMap `expected-versions`.
 
 ## Run
-Run by deploying the following manifest
 ```
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: k8s-state-checker
-  labels:
-    app: k8s-state-checker
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: k8s-state-checker
-  template:
-    metadata:
-      labels:
-        app: k8s-state-checker
-    spec:
-      containers:
-      - name: k8s-state-checker
-        image: jkosik/k8s-state-checker
+kubectl apply -f deployment.yaml
 ```
+
+Multiple K8S resources are created and MD5 Hash is calculated from `expected-version` ConfigMap.
+See:
+```
+kubectl logs PODNAME
+```
+
+## Deployment
+Include `deployment.yaml` to the Helm Charts deployed on the target cluster and hook control script against the newly created ConfigMap.
+
+
+## Notes
+ConfigMap is not deleted when running `kubectl delete -f deployment.yaml` so repetitive run fails.
