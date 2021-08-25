@@ -9,7 +9,7 @@ RUN apt update && apt-get upgrade -y && apt install -y \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
-COPY k8s-state-checker.sh .
+COPY k8s-state-checker/k8s-state-checker.sh .
 
 # install kubectl
 RUN curl -Lo /usr/local/bin/kubectl \

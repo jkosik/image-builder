@@ -10,7 +10,7 @@ on:
     branches:
       - 'main'
     paths:
-      - k8s-state-checker/Dockerfile
+      - k8s-state-checker/*
       - .github/workflows/k8s-state-checker.yaml
 
   workflow_dispatch:
