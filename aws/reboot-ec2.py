@@ -10,7 +10,7 @@ cmd_env = os.environ['cmd_env']
 cluster_name = "luna-multi-tenant-" + cmd_env
 
 client = boto3.client('ec2',region_name=region)
-response = client.describe_instances(
+describe_res = client.describe_instances(
   Filters=[
         {
             'Name': 'tag:eksctl.cluster.k8s.io/v1alpha1/cluster-name',
@@ -26,19 +26,20 @@ response = client.describe_instances(
   ],
 )
 
-#print(response)
+#print(describe_res)
 
 print(f"List of VMs to reboot:")
-for reservation in response['Reservations']:
+for reservation in describe_res['Reservations']:
     for instance in reservation['Instances']:
         print(f"{instance['InstanceId']} - {instance['PrivateDnsName']}")
 
-for reservation in response['Reservations']:
+for reservation in describe_res['Reservations']:
     for instance in reservation['Instances']:
-        print(f'Rebooting {instance['InstanceId']} and sleeping 10 mins')
+        print(f"Rebooting {instance['InstanceId']} and sleeping 10 mins")
         #sleep 10 mins (600s)
-        instance = ec2.Instance(instance['InstanceId'])
-        instance.reboot()
+        delete_res = client.reboot_instances(
+            InstanceIds=[instance['InstanceId']]
+        )
         time.sleep(600)
 
 # test machine
