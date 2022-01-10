@@ -33,24 +33,15 @@ for reservation in response['Reservations']:
     for instance in reservation['Instances']:
         print(f"{instance['InstanceId']} - {instance['PrivateDnsName']}")
 
-# for reservation in response['Reservations']:
-#     for instance in reservation['Instances']:
-#         print(f'Rebooting {instance['InstanceId']} and sleeping 10 mins')
-#         #sleep 10 mins (600s)
-#         instance = ec2.Instance(instance['InstanceId'])
-#         instance.reboot()
-#         time.sleep(600)
+for reservation in response['Reservations']:
+    for instance in reservation['Instances']:
+        print(f'Rebooting {instance['InstanceId']} and sleeping 10 mins')
+        #sleep 10 mins (600s)
+        instance = ec2.Instance(instance['InstanceId'])
+        instance.reboot()
+        time.sleep(600)
 
 # test machine
 # instance_id = 'i-0b14f668064f9c73d'
 
-# ec2 = boto3.resource(
-#       'ec2', 
-#     #   aws_access_key_id='xxx',
-#     #   aws_secret_access_key='xxx',
-#       region_name=region     
-#       )
-# instance = ec2.Instance(instance_id)
-# instance.reboot()
-# print(f'EC2 instance "{instance.id}" has been rebooted')
 
