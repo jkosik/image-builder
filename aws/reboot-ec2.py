@@ -38,7 +38,7 @@ for reservation in describe_res['Reservations']:
         print(f"Rebooting {instance['InstanceId']} and sleeping 10 mins")
         #sleep 10 mins (600s)
         delete_res = client.reboot_instances(
-            InstanceIds=[instance['InstanceId']]
+            InstanceIds=[instance['InstanceId']],
         )
         time.sleep(600)
 
