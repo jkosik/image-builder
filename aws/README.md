@@ -37,12 +37,12 @@ spec:
       - name: reboot-ec2
         image: jkosik/aws:latest
         env:
-          - name: CMD_ENV
+          - name: cmd_env
             value: ops
-          - name: REGION
+          - name: region
             value: us-east-1
         envFrom:
           - secretRef:
               name: cmd-ops-creds
-        args: ["python3 reboot-ec2.py"] 
+        args: ["python3", "reboot-ec2.py"]
 ```
