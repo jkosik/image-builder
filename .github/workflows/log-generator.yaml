@@ -4,6 +4,7 @@ env:
   DOCKERHUB_NAMESPACE: jkosik
   DOCKERHUB_REPO: log-generator
   TAG: latest
+  
 on:
   push:
     branches:
