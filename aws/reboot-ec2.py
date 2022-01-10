@@ -2,9 +2,9 @@
 import boto3, time, json, os
 
 # e.g.: us-east-1
-region = os.environ['region']
+region = os.environ['REGION']
 # e.g.: ops
-cmd_env = os.environ['cmd_env']
+cmd_env = os.environ['CMD_ENV']
 
 # e.g. luna-multi-tenant-ops
 cluster_name = "luna-multi-tenant-" + cmd_env
