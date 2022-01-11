@@ -28,18 +28,20 @@ describe_res = client.describe_instances(
 
 #print(describe_res)
 
-print(f"List of VMs to reboot:")
+print(f"=== List of VMs to reboot ===")
 for reservation in describe_res['Reservations']:
     for instance in reservation['Instances']:
         print(f"{instance['InstanceId']} - {instance['PrivateDnsName']}")
 
+print(f"=== Rebooting EC2s ===")
 for reservation in describe_res['Reservations']:
     for instance in reservation['Instances']:
-        print(f"Rebooting {instance['InstanceId']} and sleeping 10 mins")
+        print(f"--- Rebooting {instance['InstanceId']} and sleeping for a while ---")
         #sleep 10 mins (600s)
         delete_res = client.reboot_instances(
             InstanceIds=[instance['InstanceId']],
         )
+        print(delete_res)
         time.sleep(600)
 
 # test machine
