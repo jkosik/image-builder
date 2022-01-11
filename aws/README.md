@@ -17,6 +17,7 @@ stringData:
   aws_secret_access_key: "YOUR_AWS_KEY"
 
 ---
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -36,13 +37,17 @@ spec:
       containers:
       - name: reboot-ec2
         image: jkosik/aws:latest
+        imagePullPolicy: Always
         env:
-          - name: cmd_env
+          - name: CMD_ENV
             value: ops
-          - name: region
+          - name: REGION
             value: us-east-1
+          - name: TIMEOUT
+            value: 600 
         envFrom:
           - secretRef:
               name: cmd-ops-creds
-        args: ["python3", "reboot-ec2.py"]
+        args: ["python3", "reboot-ec2.py"] 
+        
 ```

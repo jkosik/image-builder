@@ -5,6 +5,7 @@ import boto3, time, json, os
 region = os.environ['REGION']
 # e.g.: ops
 cmd_env = os.environ['CMD_ENV']
+timeout = os.environ['TIMEOUT']
 
 # e.g. luna-multi-tenant-ops
 cluster_name = "luna-multi-tenant-" + cmd_env
@@ -37,12 +38,11 @@ print(f"=== Rebooting EC2s ===")
 for reservation in describe_res['Reservations']:
     for instance in reservation['Instances']:
         print(f"--- Rebooting {instance['InstanceId']} and sleeping for a while ---")
-        #sleep 10 mins (600s)
         delete_res = client.reboot_instances(
             InstanceIds=[instance['InstanceId']],
         )
         print(delete_res)
-        time.sleep(600)
+        time.sleep(timeout)
 
 # test machine
 # instance_id = 'i-0b14f668064f9c73d'
