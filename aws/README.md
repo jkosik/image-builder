@@ -47,6 +47,6 @@ spec:
         envFrom:
           - secretRef:
               name: cmd-ops-creds
-        args: ["python3", "reboot-ec2.py"] 
+        command: ["python3", "-u", "reboot-ec2.py"] 
         
 ```
