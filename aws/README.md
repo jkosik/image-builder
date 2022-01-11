@@ -13,8 +13,8 @@ kind: Secret
 metadata:
   name: cmd-ops-creds
 stringData:
-  aws_access_key_id: "YOUR_AWS_ID"
-  aws_secret_access_key: "YOUR_AWS_KEY"
+  AWS_ACCESS_KEY_ID: "YOUR_AWS_ID"
+  AWS_SECRET_ACCESS_KEY: "YOUR_AWS_KEY"
 
 ---
 apiVersion: apps/v1
