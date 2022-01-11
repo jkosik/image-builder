@@ -2,7 +2,7 @@
 ```
 docker build -t aws .
 docker run -ti -e AWS_ACCESS_KEY_ID='YOUR_AWS_ID' -e AWS_SECRET_ACCESS_KEY='YOUR_AWS_KEY' aws aws --version
-docker run -ti -e AWS_ACCESS_KEY_ID='YOUR_AWS_ID' -e AWS_SECRET_ACCESS_KEY='YOUR_AWS_KEY' -e CMD_ENV='ops' -e REGION='us-east-1' aws python reboot-ec2.py
+docker run -ti -e AWS_ACCESS_KEY_ID='YOUR_AWS_ID' -e AWS_SECRET_ACCESS_KEY='YOUR_AWS_KEY' -e CMD_ENV='ops' -e REGION='us-east-1' -e TIMEOUT='600' aws python reboot-ec2.py
 ```
 
 # Sample manifest
