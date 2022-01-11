@@ -5,7 +5,7 @@ import boto3, time, json, os
 region = os.environ['REGION']
 # e.g.: ops
 cmd_env = os.environ['CMD_ENV']
-timeout = os.environ['TIMEOUT']
+timeout = int(os.environ['TIMEOUT'])
 
 # e.g. luna-multi-tenant-ops
 cluster_name = "luna-multi-tenant-" + cmd_env
