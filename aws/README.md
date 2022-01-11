@@ -17,7 +17,6 @@ stringData:
   aws_secret_access_key: "YOUR_AWS_KEY"
 
 ---
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
