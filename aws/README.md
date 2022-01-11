@@ -43,7 +43,7 @@ spec:
           - name: REGION
             value: us-east-1
           - name: TIMEOUT
-            value: 600 
+            value: "600" 
         envFrom:
           - secretRef:
               name: cmd-ops-creds
