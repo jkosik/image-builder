@@ -12,7 +12,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     jq \
     openssh-client \
     python3-pip \
-    unzip \
+    unzip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
