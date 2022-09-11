@@ -1,0 +1,33 @@
+name: dso-base
+
+env:
+  DOCKERHUB_NAMESPACE: jkosik
+  DOCKERHUB_REPO: dso-base
+  TAG: 0.0.1
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - dso-base/Dockerfile
+      - .github/workflows/dso-base.yaml
+
+  workflow_dispatch:
+
+jobs:
+  build_and_push:
+    name: Build and push Docker image to DockerHub
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@master
+
+      - name: Kaniko build
+        uses: aevea/action-kaniko@master
+        with:
+          image: ${{ env.DOCKERHUB_NAMESPACE }}/${{ env.DOCKERHUB_REPO }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          build_file: ${{ env.DOCKERHUB_REPO }}/Dockerfile
+          tag: ${{ env.TAG }}
